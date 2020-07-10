@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <form action="#" th:action="@{/customer/buyProducts/__${id}__}" th:object="${customer}" method="post">
+
+
+        <p th:text="'Hello ' + ${innerObjectCustName} + '! Please create your shopping list!'"></p>
+
+        <table>
+            <tr>
+                <td> Products in the system</td>
+                <td>
+                    <select multiple="multiple" th:field="*{allCustomerProducts}">
+                        <option th:each="prod : ${allCustomerProducts}" th:value="${prod.getId()}" th:text="${prod.getTitle() + ' ' + prod.getPrice()}" ></option>
+
+                    </select>
+                </td>
+
+            </tr>
+        </table>
+        <input type="submit">
+
+    </form>
+
+
+</body>
+</html>

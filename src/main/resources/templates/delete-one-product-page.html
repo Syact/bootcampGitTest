@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<form action="#" th:action="@{/product/deleteProduct}" th:object="${product}" method="post">
+
+    <table>
+        <tr>
+            <td> Please insert ID</td>
+            <td> <input type="text" th:field="*{id}" th:value="${id}"> </td>
+
+        </tr>
+
+
+    </table>
+
+    <input type="submit">
+</form>
+</body>
+</html>
