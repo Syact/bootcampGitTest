@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-
 import javax.validation.Valid;
 
 @Controller
@@ -32,6 +31,11 @@ public class ProductController {
     public String getSaveTestingData() {
         System.out.println("saveTestingData");
         prodService.saveTestingData();
+        return "hello-page"; // hello-page.html
+    }
+
+    @GetMapping("/gitTest")
+    public String getGitTest(){
         return "hello-page"; // hello-page.html
     }
 
